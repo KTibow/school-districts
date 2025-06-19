@@ -50,7 +50,7 @@ const selectSemester = (semesters) =>
 /**
  * @type {Record<string, SchoolDistrict>}
  */
-export default {
+const districts = {
   "apps.nsd.org": {
     name: "NSD",
     expandedName: "Northshore School District",
@@ -239,3 +239,4 @@ export default {
   },
   // More to come :)
 };
+export default districts;
