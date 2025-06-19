@@ -1,0 +1,10 @@
+{
+  "name": "school-districts",
+  "version": "1.0.0",
+  "description": "Identify school districts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KTibow/school-districts"
+  }
+}
