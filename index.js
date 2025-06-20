@@ -39,12 +39,12 @@ const selectSemester = (semesters) =>
 
 /**
  * @typedef {Object} SchoolDistrict
- * @property {string} name - Short name of the district
- * @property {string} expandedName - Full name of the district
- * @property {string} location - Geographic location
- * @property {{ app: string; host: string }[]} apps - Array of applications
- * @property {Date[]} [semester] - Dates in current semester
- * @property {Record<string, string>} [birthdays] - Birthday map (name -> MM/DD)
+ * @property {string} name Short name of the district
+ * @property {string} expandedName Full name of the district
+ * @property {string} location Geographic location
+ * @property {{ app: string; host: string }[]} apps Array of applications
+ * @property {Date[]} [semester] Dates in current semester
+ * @property {Record<string, string>} [birthdays] Birthday map (name -> MM/DD)
  */
 
 /**
