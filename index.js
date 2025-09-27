@@ -42,7 +42,7 @@ const selectSemester = (semesters) =>
  * @property {string} name Short name of the district
  * @property {string} expandedName Full name of the district
  * @property {string} location Geographic location
- * @property {{ app: string; host: string }[]} apps Array of applications
+ * @property {{ app: string; base: string }[]} apps Array of applications
  * @property {Date[]} [semester] Dates in current semester
  */
 
@@ -57,7 +57,7 @@ const districts = {
     apps: [
       {
         app: "StudentVue",
-        host: "wa-nor-psv.edupoint.com",
+        base: "https://wa-nor-psv.edupoint.com",
       },
     ],
     semester: selectSemester([

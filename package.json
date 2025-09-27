@@ -1,6 +1,6 @@
 {
   "name": "school-districts",
-  "version": "1.0.6",
+  "version": "2.0.0",
   "description": "Identify school districts",
   "type": "module",
   "main": "index.js",
@@ -15,7 +15,7 @@
     "url": "https://github.com/KTibow/school-districts"
   },
   "scripts": {
-    "prepublishOnly": "tsc index.js --declaration --allowJs --emitDeclarationOnly"
+    "prepack": "tsc index.js --declaration --allowJs --emitDeclarationOnly"
   },
   "devDependencies": {
     "typescript": "^5.8.3"
