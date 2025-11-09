@@ -48,6 +48,17 @@ export const districtApps: Record<string, { app: string; base: string }[]> = {
   "apps.nsd.org": [...genSynergy("wa-nor")],
 };
 
+export type DistrictNews = { type: "flashalert"; url: string; org: string };
+
+const genFlashalert = (region: number, org: string): DistrictNews => ({
+  type: "flashalert",
+  url: `https://raw.githubusercontent.com/KTibow/flashalert-mirror/refs/heads/main/json/news-${region}.jsonl`,
+  org,
+});
+export const districtNews: Record<string, DistrictNews> = {
+  "apps.nsd.org": genFlashalert(12, "Northshore SD"),
+};
+
 export const districtSemesters: Record<string, Date[]> = {
   "apps.nsd.org": selectSemester([
     // First semester: Sept 3 - Jan 23
