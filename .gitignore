@@ -1,2 +1,4 @@
 node_modules
-*.d.ts
+dist
+*.log
+.DS_Store

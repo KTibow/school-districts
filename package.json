@@ -1,23 +1,30 @@
 {
   "name": "school-districts",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Identify school districts",
   "type": "module",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "files": [
-    "index.js",
-    "index.d.ts"
-  ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/KTibow/school-districts"
+    "url": "git+https://github.com/KTibow/school-districts.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
   },
   "scripts": {
-    "prepack": "tsc index.js --declaration --allowJs --emitDeclarationOnly"
+    "prepack": "tsdown",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "@types/node": "^24.10.0",
+    "tsdown": "^0.16.0",
+    "typescript": "^5.9.3"
   }
 }
