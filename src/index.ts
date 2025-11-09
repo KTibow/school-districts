@@ -49,8 +49,8 @@ export const districtApps: Record<string, { app: string; base: string }[]> = {
   ],
 };
 
-export const districtSemesters: Record<string, Date[][]> = {
-  "apps.nsd.org": [
+export const districtSemesters: Record<string, Date[]> = {
+  "apps.nsd.org": selectSemester([
     // First semester: Sept 3 - Jan 23
     subtractRanges(
       weekdayRange("2025-09-03", "2026-01-23"),
@@ -76,11 +76,7 @@ export const districtSemesters: Record<string, Date[][]> = {
       // Memorial Day
       new Date("2026-05-25"),
     ),
-  ],
-};
-
-export const districtCurrentSemesters: Record<string, Date[]> = {
-  "apps.nsd.org": selectSemester(districtSemesters["apps.nsd.org"]),
+  ]),
 };
 
 export const schoolLocations: Record<
