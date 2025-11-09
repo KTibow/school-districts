@@ -40,13 +40,12 @@ export const districtLocations: Record<string, string> = {
   "apps.nsd.org": "Washington State",
 };
 
+const genSynergy = (id: string) => [
+  { app: "StudentVue", base: `https://${id}-psv.edupoint.com` },
+  { app: "Synergy", base: `https://${id}.edupoint.com` },
+];
 export const districtApps: Record<string, { app: string; base: string }[]> = {
-  "apps.nsd.org": [
-    {
-      app: "StudentVue",
-      base: "https://wa-nor-psv.edupoint.com",
-    },
-  ],
+  "apps.nsd.org": [...genSynergy("wa-nor")],
 };
 
 export const districtSemesters: Record<string, Date[]> = {
