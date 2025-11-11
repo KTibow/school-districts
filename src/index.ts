@@ -1,4 +1,5 @@
-import { locations as nsdLocations, nws as nsdNWS } from "./schools/nsd";
+import { locations as nsdLocations, apps as nsdApps } from "./schools/nsd";
+import type { App, DistrictNews } from "./types";
 
 const weekdayRange = (from: string, to: string) => {
   const startDate = new Date(from);
@@ -44,11 +45,9 @@ const genSynergy = (id: string) => [
   { app: "StudentVue", base: `https://${id}-psv.edupoint.com` },
   { app: "Synergy", base: `https://${id}.edupoint.com` },
 ];
-export const districtApps: Record<string, { app: string; base: string }[]> = {
+export const districtApps: Record<string, App[]> = {
   "apps.nsd.org": [...genSynergy("wa-nor")],
 };
-
-export type DistrictNews = { type: "flashalert"; url: string; org: string };
 
 const genFlashalert = (region: number, org: string): DistrictNews => ({
   type: "flashalert",
@@ -96,8 +95,8 @@ export const schoolLocations: Record<
   "apps.nsd.org": nsdLocations,
 };
 
-export const schoolNWS: Record<string, Record<string, string>> = {
-  "apps.nsd.org": nsdNWS,
+export const schoolApps: Record<string, Record<string, App[]>> = {
+  "apps.nsd.org": nsdApps,
 };
 
 // You can add your district :)

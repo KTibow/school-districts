@@ -1,3 +1,5 @@
+import type { App } from "../types";
+
 export const locations: Record<string, [number, number]> = {
   "Bothell High School": [47.760475, -122.2205602],
   "Inglemoor High School": [47.7414843, -122.222623],
@@ -33,68 +35,224 @@ export const locations: Record<string, [number, number]> = {
   "Woodin Elementary": [47.7678866, -122.1672296],
   "Woodmoor Elementary": [47.7418199, -122.1765075],
 };
-export const nws: Record<string, string> = {
-  "Bothell High School":
-    "https://api.weather.gov/gridpoints/SEW/130,75/forecast",
-  "Inglemoor High School":
-    "https://api.weather.gov/gridpoints/SEW/129,74/forecast",
-  "Innovation Lab High School":
-    "https://api.weather.gov/gridpoints/SEW/130,76/forecast",
-  "North Creek High School":
-    "https://api.weather.gov/gridpoints/SEW/131,77/forecast",
-  "Woodinville High School":
-    "https://api.weather.gov/gridpoints/SEW/132,75/forecast",
+export const apps: Record<string, App[]> = {
+  "Bothell High School": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/130,75" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3821",
+    },
+  ],
+  "Inglemoor High School": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/129,74" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3822",
+    },
+  ],
+  "Innovation Lab High School": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/130,76" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/8382",
+    },
+  ],
+  "North Creek High School": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/131,77" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3825",
+    },
+  ],
+  "Woodinville High School": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/132,75" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3823",
+    },
+  ],
   // ---
-  "Canyon Park Middle School":
-    "https://api.weather.gov/gridpoints/SEW/130,75/forecast",
-  "Kenmore Middle School":
-    "https://api.weather.gov/gridpoints/SEW/129,75/forecast",
-  "Leota Middle School":
-    "https://api.weather.gov/gridpoints/SEW/133,74/forecast",
-  "Northshore Middle School":
-    "https://api.weather.gov/gridpoints/SEW/131,73/forecast",
-  "Skyview Middle School":
-    "https://api.weather.gov/gridpoints/SEW/131,76/forecast",
-  "Timbercrest Middle School":
-    "https://api.weather.gov/gridpoints/SEW/135,74/forecast",
+  "Canyon Park Middle School": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/130,75" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3815",
+    },
+  ],
+  "Kenmore Middle School": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/129,75" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3816",
+    },
+  ],
+  "Leota Middle School": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/133,74" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3817",
+    },
+  ],
+  "Northshore Middle School": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/131,73" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3818",
+    },
+  ],
+  "Skyview Middle School": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/131,76" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3819",
+    },
+  ],
+  "Timbercrest Middle School": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/135,74" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3820",
+    },
+  ],
   // ---
-  "Arrowhead Elementary":
-    "https://api.weather.gov/gridpoints/SEW/128,74/forecast",
-  "Canyon Creek Elementary":
-    "https://api.weather.gov/gridpoints/SEW/131,76/forecast",
-  "Cottage Lake Elementary":
-    "https://api.weather.gov/gridpoints/SEW/134,73/forecast",
-  "Crystal Springs Elementary":
-    "https://api.weather.gov/gridpoints/SEW/130,76/forecast",
-  "East Ridge Elementary":
-    "https://api.weather.gov/gridpoints/SEW/135,73/forecast",
-  "Fernwood Elementary":
-    "https://api.weather.gov/gridpoints/SEW/131,77/forecast",
-  "Frank Love Elementary":
-    "https://api.weather.gov/gridpoints/SEW/129,76/forecast",
-  "Hollywood Hill Elementary":
-    "https://api.weather.gov/gridpoints/SEW/132,74/forecast",
-  "Kenmore Elementary":
-    "https://api.weather.gov/gridpoints/SEW/129,75/forecast",
-  "Kokanee Elementary":
-    "https://api.weather.gov/gridpoints/SEW/132,75/forecast",
-  "Lockwood Elementary":
-    "https://api.weather.gov/gridpoints/SEW/129,76/forecast",
-  "Maywood Hills Elementary":
-    "https://api.weather.gov/gridpoints/SEW/130,75/forecast",
-  "Moorlands Elementary":
-    "https://api.weather.gov/gridpoints/SEW/129,74/forecast",
-  "Ruby Bridges Elementary":
-    "https://api.weather.gov/gridpoints/SEW/132,77/forecast",
-  "Shelton View Elementary":
-    "https://api.weather.gov/gridpoints/SEW/129,76/forecast",
-  "Sunrise Elementary":
-    "https://api.weather.gov/gridpoints/SEW/133,72/forecast",
-  "Wellington Elementary":
-    "https://api.weather.gov/gridpoints/SEW/133,74/forecast",
-  "Westhill Elementary":
-    "https://api.weather.gov/gridpoints/SEW/130,75/forecast",
-  "Woodin Elementary": "https://api.weather.gov/gridpoints/SEW/131,75/forecast",
-  "Woodmoor Elementary":
-    "https://api.weather.gov/gridpoints/SEW/131,73/forecast",
+  "Arrowhead Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/128,74" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3795",
+    },
+  ],
+  "Canyon Creek Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/131,76" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3797",
+    },
+  ],
+  "Cottage Lake Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/134,73" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3798",
+    },
+  ],
+  "Crystal Springs Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/130,76" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3799",
+    },
+  ],
+  "East Ridge Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/135,73" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3800",
+    },
+  ],
+  "Fernwood Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/131,77" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3801",
+    },
+  ],
+  "Frank Love Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/129,76" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3802",
+    },
+  ],
+  "Hollywood Hill Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/132,74" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3803",
+    },
+  ],
+  "Kenmore Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/129,75" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3804",
+    },
+  ],
+  "Kokanee Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/132,75" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3805",
+    },
+  ],
+  "Lockwood Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/129,76" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3806",
+    },
+  ],
+  "Maywood Hills Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/130,75" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3807",
+    },
+  ],
+  "Moorlands Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/129,74" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3808",
+    },
+  ],
+  "Ruby Bridges Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/132,77" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/6654",
+    },
+  ],
+  "Shelton View Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/129,76" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3809",
+    },
+  ],
+  "Sunrise Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/133,72" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3810",
+    },
+  ],
+  "Wellington Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/133,74" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3811",
+    },
+  ],
+  "Westhill Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/130,75" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3812",
+    },
+  ],
+  "Woodin Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/131,75" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3813",
+    },
+  ],
+  "Woodmoor Elementary": [
+    { app: "NWS", base: "https://api.weather.gov/gridpoints/SEW/131,73" },
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448/sites/3814",
+    },
+  ],
 };
