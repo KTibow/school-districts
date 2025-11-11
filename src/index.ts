@@ -46,7 +46,13 @@ const genSynergy = (id: string) => [
   { app: "Synergy", base: `https://${id}.edupoint.com` },
 ];
 export const districtApps: Record<string, App[]> = {
-  "apps.nsd.org": [...genSynergy("wa-nor")],
+  "apps.nsd.org": [
+    ...genSynergy("wa-nor"),
+    {
+      app: "My School Menus",
+      base: "https://menus.healthepro.com/api/organizations/448",
+    },
+  ],
 };
 
 const genFlashalert = (region: number, org: string): DistrictNews => ({
