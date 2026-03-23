@@ -1,5 +1,5 @@
 import { locations as nsdLocations, apps as nsdApps } from "./schools/nsd";
-import type { App, DistrictNews } from "./types";
+import type { App } from "./types";
 
 const weekdayRange = (from: string, to: string) => {
   const startDate = new Date(from);
@@ -55,9 +55,10 @@ export const districtApps: Record<string, App[]> = {
   ],
 };
 
-const genFlashalert = (region: number, org: string): DistrictNews => ({
+type DistrictNews = { type: "flashalert"; regionId: number; org: string };
+const genFlashalert = (regionId: number, org: string): DistrictNews => ({
   type: "flashalert",
-  url: `https://raw.githubusercontent.com/KTibow/flashalert-mirror/refs/heads/main/json/news-${region}.jsonl`,
+  regionId,
   org,
 });
 export const districtNews: Record<string, DistrictNews> = {

@@ -1,6 +1,6 @@
 {
   "name": "school-districts",
-  "version": "5.0.1",
+  "version": "6.0.0",
   "description": "Identify school districts",
   "type": "module",
   "license": "MIT",
